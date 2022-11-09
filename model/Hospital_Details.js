@@ -15,20 +15,6 @@ const HospitalDetailsData = new mongoose.Schema({
   TotalPatientsCount: {
     type: Number,
   },
-  PsychiatristDetails: [{
-    PsychiatristId: {
-      type: Number,
-    },
-    PsychiatristName: {
-      type: String,
-    },
-    PsychiatristPatientsCount: {
-      type: Number,
-    },
-    PsychiatristPatientsIds: {
-        type: Array,
-    },
-  }],
 });
 
 const HospitalDetails = mongoose.model("HospitalDetails", HospitalDetailsData);

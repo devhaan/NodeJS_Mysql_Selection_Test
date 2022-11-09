@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 
 const PatienDetailsData = new mongoose.Schema({
-  PatientId: {
+  Hospital_Id: {
     type: Number,
     required: true,
+  },
+  Patient_Id: {
+    type: String,
   },
   PatientName: {
     type: String,
@@ -14,14 +17,14 @@ const PatienDetailsData = new mongoose.Schema({
     required: true,
   },
   PhoneNo: {
-    type: Number,
+    type: String,
     required: true,
   },
   Password: {
     type: String,
     required: true,
   },
-  PsychiatristId: {
+  Psychiatrist_Id: {
     type: String,
   },
   Hospital_Id: {
