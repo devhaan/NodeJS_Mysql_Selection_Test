@@ -20,7 +20,7 @@ List Of All Major Libraries which Used And Why in this Server App listed belolw:
     
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-    List API endpoints details 
+ List API endpoints details 
     
     1) POST REQUEST ----> http://localhost:8000/patientDB  
     
