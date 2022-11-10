@@ -12,6 +12,10 @@ const PatienDetailsData = new mongoose.Schema({
     type: String,
     required: true,
   },
+  EmailAddress: {
+    type: String,
+    required: true,
+  },
   Address: {
     type: String,
     required: true,
@@ -29,6 +33,10 @@ const PatienDetailsData = new mongoose.Schema({
   },
   Hospital_Id: {
     type: Number,
+  },
+  Patient_Image: {
+    data: { type: Buffer },
+    contentType: { type: String },
   },
 });
 

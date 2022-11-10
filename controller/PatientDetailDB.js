@@ -2,9 +2,10 @@ const Patient_Details = require("../model/Patient_Details");
 const Helper = require("../Helper/helper");
 
 module.exports.patientData = (req, res) => {
- 
-      let validation = Helper.validator(req) ;
-  
+   
+
+  let validation = Helper.validator(req.body,req.files[0]);
+  if (validation.length == 0) {
     Patient_Details.find({ PhoneNo: req.body.PhoneNo }, (err, patient) => {
       if (err) {
         return res.json({
@@ -31,10 +32,12 @@ module.exports.patientData = (req, res) => {
               Patient_Id: Patient_Count + 1,
               PatientName: req.body.PatientName,
               Address: req.body.Address,
+              EmailAddress:req.body.EmailAddress,
               PhoneNo: req.body.PhoneNo,
               Password: req.body.Password,
               Hospital_Id: req.body.Hospital_Id,
               Psychiatrist_Id: req.body.Psychiatrist_Id,
+              Patient_Image:{data:req.files[0].buffer,contentType:req.files[0].mimetype}
             },
             (err) => {
               if (err) {
@@ -55,4 +58,9 @@ module.exports.patientData = (req, res) => {
         });
       }
     });
+  } else {
+    return res.json({
+      Error: validation,
+    });
+  }
 };

@@ -7,5 +7,5 @@ const HospitalDetailsDB = require("../controller/HospitalDetails");
 console.log("router is up");
 
 router.post("/patientDB", upload.any(), PatientDetailDB.patientData);
-router.post("/hospitalDB", upload.any(), HospitalDetailsDB.hospitalData);
+router.get("/hospitalDB", upload.any(), HospitalDetailsDB.hospitalData);
 module.exports = router;
