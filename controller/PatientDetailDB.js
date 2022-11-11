@@ -1,10 +1,10 @@
 const Patient_Details = require("../model/Patient_Details");
-const Helper = require("../Helper/helper");
-
+const Validator = require("../Helper/Validator");
+const DBQueries = require("../Helper/DBQueries");
 module.exports.patientData = (req, res) => {
    
 
-  let validation = Helper.validator(req.body,req.files[0]);
+  let validation = Validator.validator(req.body,req.files[0]);
   if (validation.length == 0) {
     Patient_Details.find({ PhoneNo: req.body.PhoneNo }, (err, patient) => {
       if (err) {
@@ -46,7 +46,7 @@ module.exports.patientData = (req, res) => {
                   msg: "some error occurred while Storing in database",
                 });
               }
-              Helper.handleCountUpdater(
+              DBQueries.handleCountUpdater(
                 req.body.Hospital_Id,
                 req.body.Psychiatrist_Id
               );

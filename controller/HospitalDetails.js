@@ -1,7 +1,7 @@
 const Hospital_Details = require("../model/Hospital_Details");
 const Psychiatrist_Details = require("../model/Psychiatrist_Details");
 module.exports.hospitalData = (req, res) => {
-  console.log(req.body.Hospital_Id);
+
 
 
   Hospital_Details.find(
